@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freedom High School Apparel - Patriots Pride</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="Freedom.png" 
+         alt="Freedom High School Patriots Logo" 
+         class="school-logo">
+    <h1>Freedom High School Patriots Apparel</h1>
+  </header>
+
+  <nav class="tabs">
+    <button onclick="showTab('about')">About Us</button>
+    <button onclick="showTab('shirts')">Shirts</button>
+    <button onclick="showTab('process')">How We Make Shirts</button>
+    <button onclick="showTab('contact')">Contact Us</button>
+  </nav>
+
+  <main>
+    <section id="about" class="tab">
+      <h2>About Us</h2>
+      <p>
+        We are a student-run apparel project at Freedom High School in Tampa, FL, 
+        creating school-approved designs with Patriots pride. 
+        All orders are fulfilled right here on campus!
+      </p>
+    </section>
+
+    <section id="shirts" class="tab active">
+      <h2>Our Shirts</h2>
+      <div id="product-grid"></div>
+    </section>
+
+    <section id="process" class="tab">
+      <h2>How We Make Shirts</h2>
+      <p>At Freedom High School's student business, we handle the full process with pride:</p>
+      <ol>
+        <li><strong>Design</strong> – Brainstorm and create Patriots-themed artwork using school colors.</li>
+        <li><strong>Proof & Approval</strong> – Make digital mockups and get teacher/student approval.</li>
+        <li><strong>Printing</strong> – Use screen printing, heat press, or vinyl cutting on campus.</li>
+        <li><strong>Quality Check</strong> – Every shirt is inspected for perfect quality.</li>
+        <li><strong>Packaging & Sales</strong> – Packaged and ready for you to pick up or wear with pride!</li>
+      </ol>
+      <p>Want to help or suggest a design? Talk to us in class or via contact!</p>
+    </section>
+
+    <section id="contact" class="tab">
+      <h2>Contact Us</h2>
+      <p>Email: schoolapparel@example.com</p>
+      <p>Or reach out to the Freedom High School business class teacher.</p>
+    </section>
+  </main>
+
+  <!-- Order Modal -->
+  <div id="order-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Order <span id="modal-shirt-name">Shirt</span></h2>
+      
+      <form action="https://formbold.com/s/oavxQ" method="POST">
+        <input type="hidden" name="shirt" id="shirt-input">
+        <input type="hidden" name="subject" value="New Patriots Apparel Order">
+
+        <label for="name">Full Name (First and Last):</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="555-123-4567" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+        <label for="payment">Preferred Payment Method:</label>
+        <select id="payment" name="payment" required>
+          <option value="" disabled selected>Select payment method</option>
+          <option value="cash">Cash (in-person)</option>
+          <option value="card">Card (in-person)</option>
+          <option value="venmo">Venmo</option>
+          <option value="other">Other (please specify in comments)</option>
+        </select>
+
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>Freedom High School – Home of the Patriots • Student-run apparel project • Tampa, FL</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
