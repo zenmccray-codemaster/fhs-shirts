@@ -7,7 +7,7 @@
 body {
   font-family: 'Inter', sans-serif;
   background: #ffffff;
-  color: #002868; /* navy */
+  color: #002868;
   line-height: 1.6;
 }
 
@@ -16,15 +16,11 @@ header {
   color: white;
   text-align: center;
   padding: 4rem 1rem 3rem;
-  position: relative;
-  overflow: hidden;
 }
 
 .header-content {
   max-width: 1000px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
 }
 
 .school-logo {
@@ -44,7 +40,6 @@ header h1 {
 .tagline {
   font-size: 1.3rem;
   opacity: 0.9;
-  font-weight: 400;
 }
 
 .tabs {
@@ -174,7 +169,24 @@ ol li {
   background: #a00d24;
 }
 
-/* Modal */
+.custom-order-btn {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 1rem 2.5rem;
+  background: #002868;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.custom-order-btn:hover {
+  background: #001f4d;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -230,6 +242,17 @@ ol li {
   font-size: 1rem;
 }
 
+.modal input[type="file"] {
+  padding: 0.5rem 0;
+}
+
+.file-note {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
 .modal button {
   margin-top: 1.8rem;
   background: #C8102E;
@@ -247,7 +270,6 @@ ol li {
   background: #a00d24;
 }
 
-/* Footer */
 footer {
   background: #002868;
   color: white;
@@ -261,10 +283,10 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
   header { padding: 3rem 1rem 2rem; }
   header h1 { font-size: 2.5rem; }
   .tabs { flex-wrap: wrap; }
   .tabs button { padding: 0.9rem 1.2rem; font-size: 1rem; }
 }
+
