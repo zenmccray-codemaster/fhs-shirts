@@ -66,3 +66,5 @@ function openOrderModal(shirtName) {
 document.addEventListener("DOMContentLoaded", () => {
   showTab("about");
 });
+
+// Updated shirt list - force rebuild July 2025
