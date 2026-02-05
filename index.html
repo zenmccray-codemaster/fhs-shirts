@@ -35,6 +35,7 @@
     <section id="shirts" class="tab">
       <h2>Our T-Shirts</h2>
       <div id="product-grid"></div>
+      <button class="custom-order-btn" onclick="openOrderModal('Custom Design')">Order a Custom T-Shirt</button>
     </section>
 
     <section id="process" class="tab">
@@ -63,7 +64,7 @@
       <span class="close">&times;</span>
       <h2>Order <span id="modal-shirt-name">T-Shirt</span></h2>
       
-      <form action="https://formbold.com/s/oavxQ" method="POST">
+      <form action="https://formbold.com/s/oavxQ" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="shirt" id="shirt-input">
         <input type="hidden" name="subject" value="New Patriots T-Shirt Order">
 
@@ -79,27 +80,4 @@
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" name="quantity" min="1" value="1" required>
 
-        <label for="payment">Preferred Payment Method:</label>
-        <select id="payment" name="payment" required>
-          <option value="" disabled selected>Select payment method</option>
-          <option value="cash">Cash (in-person)</option>
-          <option value="card">Card (in-person)</option>
-          <option value="venmo">Venmo</option>
-          <option value="other">Other (please specify in comments)</option>
-        </select>
-
-        <label for="comments">Additional Comments:</label>
-        <textarea id="comments" name="comments" rows="4"></textarea>
-
-        <button type="submit">Submit Order</button>
-      </form>
-    </div>
-  </div>
-
-  <footer>
-    <p>Freedom High School – Home of the Patriots • Student-run T-Shirt Project • Tampa, FL</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+        <label for
