@@ -1,44 +1,44 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freedom High School Apparel - Patriots Pride</title>
+  <title>Freedom High School Patriots T-Shirts</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header>
-    <img src="Freedom.png" 
-         alt="Freedom High School Patriots Logo" 
-         class="school-logo">
-    <h1>Freedom High School Patriots Apparel</h1>
+    <div class="header-content">
+      <img src="Freedom.png" alt="Freedom High School Patriots Logo" class="school-logo">
+      <h1>Freedom High School Patriots T-Shirts</h1>
+      <p class="tagline">Student-Run • On-Campus • Patriots Pride</p>
+    </div>
   </header>
 
   <nav class="tabs">
     <button onclick="showTab('about')">About Us</button>
-    <button onclick="showTab('shirts')">Shirts</button>
-    <button onclick="showTab('process')">How We Make Shirts</button>
+    <button onclick="showTab('shirts')">T-Shirts</button>
+    <button onclick="showTab('process')">How We Make Them</button>
     <button onclick="showTab('contact')">Contact Us</button>
   </nav>
 
   <main>
-    <section id="about" class="tab">
+    <section id="about" class="tab active">
       <h2>About Us</h2>
-      <p>
-        We are a student-run apparel project at Freedom High School in Tampa, FL, 
-        creating school-approved designs with Patriots pride. 
-        All orders are fulfilled right here on campus!
-      </p>
+      <p>We are a student-run project at Freedom High School in Tampa, FL, creating school-approved T-shirt designs with true Patriots pride. All orders are fulfilled right here on campus.</p>
     </section>
 
-    <section id="shirts" class="tab active">
-      <h2>Our Shirts</h2>
+    <section id="shirts" class="tab">
+      <h2>Our T-Shirts</h2>
       <div id="product-grid"></div>
     </section>
 
     <section id="process" class="tab">
-      <h2>How We Make Shirts</h2>
+      <h2>How We Make Our T-Shirts</h2>
       <p>At Freedom High School's student business, we handle the full process with pride:</p>
       <ol>
         <li><strong>Design</strong> – Brainstorm and create Patriots-themed artwork using school colors.</li>
@@ -61,11 +61,11 @@
   <div id="order-modal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Order <span id="modal-shirt-name">Shirt</span></h2>
+      <h2>Order <span id="modal-shirt-name">T-Shirt</span></h2>
       
       <form action="https://formbold.com/s/oavxQ" method="POST">
         <input type="hidden" name="shirt" id="shirt-input">
-        <input type="hidden" name="subject" value="New Patriots Apparel Order">
+        <input type="hidden" name="subject" value="New Patriots T-Shirt Order">
 
         <label for="name">Full Name (First and Last):</label>
         <input type="text" id="name" name="name" required>
@@ -97,10 +97,9 @@
   </div>
 
   <footer>
-    <p>Freedom High School – Home of the Patriots • Student-run apparel project • Tampa, FL</p>
+    <p>Freedom High School – Home of the Patriots • Student-run T-Shirt Project • Tampa, FL</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
-
 </html>
