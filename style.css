@@ -1,114 +1,164 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: white;
-  color: #002868; /* navy blue text */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #002868; /* navy */
+  line-height: 1.6;
 }
 
 header {
-  background: #002868; /* navy blue */
+  background: linear-gradient(135deg, #002868 0%, #001f4d 100%);
   color: white;
-  padding: 1.5rem;
   text-align: center;
+  padding: 4rem 1rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .school-logo {
   max-width: 180px;
   height: auto;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  margin-bottom: 0.5rem;
 }
 
-footer {
-  background: #002868;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  margin-top: 2rem;
+.tagline {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  font-weight: 400;
 }
 
-/* Tabs */
 .tabs {
   display: flex;
   justify-content: center;
-  background: #C8102E; /* patriotic red */
-  border-bottom: 4px solid #002868;
-  flex-wrap: wrap;
+  background: #C8102E;
+  padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .tabs button {
   background: none;
   border: none;
   color: white;
-  padding: 1rem 1.8rem;
-  cursor: pointer;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .tabs button:hover,
-.tabs button:focus {
-  background: rgba(255, 255, 255, 0.2);
+.tabs button.active {
+  background: rgba(255,255,255,0.15);
+  border-bottom: 4px solid white;
 }
 
-/* Pages */
-.tab {
-  display: none;
-  padding: 2rem;
+main {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.tab {
+  display: none;
 }
 
 .tab.active {
   display: block;
+  animation: fadeIn 0.6s ease;
 }
 
 h2 {
-  color: #C8102E; /* red headings */
-  border-bottom: 2px solid #002868;
-  padding-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+  color: #C8102E;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-/* Product grid */
+p, li {
+  font-size: 1.15rem;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+ol {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+ol li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
 #product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.8rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .product {
-  background: #f8f9fa; /* light gray-white for cards */
-  border-radius: 10px;
-  padding: 1.2rem;
-  border: 2px solid #C8102E;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+}
+
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .product img {
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
+  height: 220px;
+  object-fit: cover;
 }
 
 .product h3 {
-  margin: 0.6rem 0;
+  font-size: 1.4rem;
+  margin: 1rem 0 0.5rem;
   color: #002868;
 }
 
 .product select,
 .product button {
-  width: 100%;
-  margin-top: 0.8rem;
-  padding: 0.7rem;
+  width: 90%;
+  margin: 0.8rem auto;
+  padding: 0.9rem;
   font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #002868;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
 .product button {
@@ -116,14 +166,15 @@ h2 {
   color: white;
   border: none;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  transition: background 0.3s;
 }
 
 .product button:hover {
   background: #a00d24;
 }
 
-/* Modal Styles */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -132,63 +183,88 @@ h2 {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
-  background-color: white;
-  margin: 15% auto;
-  padding: 2rem;
-  border: 2px solid #C8102E;
+  background: white;
+  margin: 1rem;
+  padding: 2.5rem;
+  border-radius: 16px;
   width: 90%;
-  max-width: 500px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  max-width: 520px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  position: relative;
 }
 
 .close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
   color: #002868;
-  float: right;
-  font-size: 2rem;
-  font-weight: bold;
   cursor: pointer;
 }
 
-.close:hover {
-  color: #C8102E;
+.modal h2 {
+  text-align: center;
+  margin-bottom: 1.8rem;
 }
 
 .modal label {
   display: block;
-  margin: 1rem 0 0.5rem;
-  font-weight: bold;
+  margin: 1.2rem 0 0.5rem;
+  font-weight: 600;
   color: #002868;
 }
 
-.modal input, 
+.modal input,
+.modal select,
 .modal textarea {
   width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: 1px solid #002868;
-  border-radius: 6px;
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   font-size: 1rem;
-  box-sizing: border-box;
 }
 
 .modal button {
+  margin-top: 1.8rem;
   background: #C8102E;
   color: white;
   border: none;
   padding: 1rem;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 6px;
-  font-weight: bold;
 }
 
 .modal button:hover {
   background: #a00d24;
+}
+
+/* Footer */
+footer {
+  background: #002868;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  header { padding: 3rem 1rem 2rem; }
+  header h1 { font-size: 2.5rem; }
+  .tabs { flex-wrap: wrap; }
+  .tabs button { padding: 0.9rem 1.2rem; font-size: 1rem; }
 }
