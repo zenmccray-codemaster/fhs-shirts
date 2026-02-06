@@ -6,74 +6,101 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #002868;
-  line-height: 1.6;
+  background: #f9fafb;
+  color: #111827;
+  line-height: 1.7;
 }
 
 header {
-  background: linear-gradient(135deg, #002868 0%, #001f4d 100%);
+  background: linear-gradient(135deg, #002868 0%, #001233 100%);
   color: white;
   text-align: center;
-  padding: 4rem 1rem 3rem;
+  padding: 6rem 1rem 4rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
+
+header,
+header * {
+  color: white !important;
 }
 
 .header-content {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .school-logo {
-  max-width: 180px;
+  max-width: 220px;
   height: auto;
-  margin-bottom: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  border: 5px solid rgba(255,255,255,0.15);
 }
 
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 4rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  color: white !important;
 }
 
 .tagline {
-  font-size: 1.3rem;
-  opacity: 0.9;
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .tabs {
   display: flex;
   justify-content: center;
   background: #C8102E;
-  padding: 1rem 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem 0;
+  box-shadow: 0 8px 25px rgba(200,16,46,0.25);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 .tabs button {
   background: none;
   border: none;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
 }
 
-.tabs button:hover,
+.tabs button:hover {
+  background: rgba(255,255,255,0.18);
+}
+
 .tabs button.active {
-  background: rgba(255,255,255,0.15);
-  border-bottom: 4px solid white;
+  background: rgba(255,255,255,0.25);
+}
+
+.tabs button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 5px;
+  background: white;
+  border-radius: 3px 3px 0 0;
 }
 
 main {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 4rem 1.5rem;
 }
 
 .tab {
@@ -82,78 +109,118 @@ main {
 
 .tab.active {
   display: block;
-  animation: fadeIn 0.6s ease;
+  animation: fadeIn 0.7s ease;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
   color: #C8102E;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
   text-align: center;
+  letter-spacing: -0.5px;
 }
 
-p, li {
-  font-size: 1.15rem;
-  max-width: 800px;
-  margin: 0 auto 1.5rem;
-  text-align: center;
-}
-
-ol {
-  max-width: 700px;
+p {
+  font-size: 1.25rem;
+  max-width: 900px;
   margin: 0 auto 2rem;
-  text-align: left;
-  padding-left: 2rem;
+  text-align: center;
+  color: #374151;
 }
 
-ol li {
-  margin-bottom: 1rem;
+.comparison-table {
+  margin: 3.5rem auto;
+  max-width: 1000px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+thead {
+  background: #002868;
+  color: white;
+}
+
+th, td {
+  padding: 1.4rem 1.8rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+td {
   font-size: 1.1rem;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.process-note {
+  font-style: italic;
+  color: #C8102E;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
 }
 
 #product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
 }
 
 .product {
   background: white;
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
   text-align: center;
-  border: 1px solid #eee;
 }
 
 .product:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transform: translateY(-15px);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.15);
 }
 
 .product img {
   width: 100%;
-  height: 220px;
+  height: 260px;
   object-fit: cover;
 }
 
 .product h3 {
-  font-size: 1.4rem;
-  margin: 1rem 0 0.5rem;
+  font-size: 1.6rem;
+  margin: 1.8rem 0 1rem;
   color: #002868;
 }
 
 .product select,
 .product button {
-  width: 90%;
-  margin: 0.8rem auto;
-  padding: 0.9rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  width: 85%;
+  margin: 1.2rem auto;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 12px;
 }
 
 .product button {
@@ -171,20 +238,22 @@ ol li {
 
 .custom-order-btn {
   display: block;
-  margin: 2rem auto 0;
-  padding: 1rem 2.5rem;
-  background: #002868;
+  margin: 4rem auto 0;
+  padding: 1.4rem 3.5rem;
+  background: linear-gradient(135deg, #002868, #001233);
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  font-weight: 600;
+  border-radius: 16px;
+  font-size: 1.4rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s;
+  box-shadow: 0 10px 30px rgba(0,40,104,0.3);
 }
 
 .custom-order-btn:hover {
-  background: #001f4d;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,40,104,0.5);
 }
 
 .modal {
@@ -195,7 +264,7 @@ ol li {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.7);
   align-items: center;
   justify-content: center;
 }
@@ -203,31 +272,35 @@ ol li {
 .modal-content {
   background: white;
   margin: 1rem;
-  padding: 2.5rem;
-  border-radius: 16px;
+  padding: 3.5rem;
+  border-radius: 24px;
   width: 90%;
-  max-width: 520px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.35);
   position: relative;
 }
 
 .close {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  font-size: 2.5rem;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 3.5rem;
   color: #002868;
   cursor: pointer;
+  font-weight: 300;
 }
 
 .modal h2 {
   text-align: center;
-  margin-bottom: 1.8rem;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .modal label {
   display: block;
-  margin: 1.2rem 0 0.5rem;
+  margin: 1.6rem 0 0.7rem;
   font-weight: 600;
   color: #002868;
 }
@@ -236,57 +309,115 @@ ol li {
 .modal select,
 .modal textarea {
   width: 100%;
-  padding: 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 1.1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: border 0.3s;
 }
 
-.modal input[type="file"] {
-  padding: 0.5rem 0;
-}
-
-.file-note {
-  font-size: 0.9rem;
-  color: #666;
-  text-align: center;
-  margin-top: 0.5rem;
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+  border-color: #C8102E;
+  outline: none;
 }
 
 .modal button {
-  margin-top: 1.8rem;
+  margin-top: 2.5rem;
   background: #C8102E;
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 1.3rem;
   width: 100%;
-  font-size: 1.15rem;
-  font-weight: 600;
-  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 12px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 .modal button:hover {
   background: #a00d24;
 }
 
+/* Footer - fixed colors */
 footer {
-  background: #002868;
+  background: linear-gradient(135deg, #002868 0%, #001233 100%);
   color: white;
+  padding: 4rem 2rem 3rem;
   text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 4rem;
+  margin-top: 6rem;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+}
+
+footer,
+footer * {
+  color: white !important;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.footer-logo img {
+  max-width: 140px;
+  height: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.footer-logo img:hover {
+  opacity: 1;
+}
+
+.footer-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-info p,
+.footer-links p {
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+  opacity: 0.95;
+}
+
+.footer-links {
+  text-align: right;
+}
+
+.footer-links p:last-child {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links {
+    text-align: center;
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
-  header { padding: 3rem 1rem 2rem; }
-  header h1 { font-size: 2.5rem; }
-  .tabs { flex-wrap: wrap; }
-  .tabs button { padding: 0.9rem 1.2rem; font-size: 1rem; }
+  header h1 { font-size: 3rem; }
+  .tabs button { padding: 1rem 1.5rem; font-size: 1rem; }
+  table { font-size: 0.95rem; }
 }
-
