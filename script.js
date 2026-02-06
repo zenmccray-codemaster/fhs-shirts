@@ -1,51 +1,68 @@
-// TAB SWITCHING
+// TAB SWITCHING - fixed version
 function showTab(id) {
+  // Hide all tabs
   document.querySelectorAll(".tab").forEach(tab => {
     tab.classList.remove("active");
   });
-  document.getElementById(id).classList.add("active");
-
+  
+  // Show the selected tab
+  const targetTab = document.getElementById(id);
+  if (targetTab) {
+    targetTab.classList.add("active");
+  } else {
+    console.error("Tab not found: " + id);
+    return;
+  }
+  
+  // Remove active from all buttons
   document.querySelectorAll(".tabs button").forEach(btn => {
     btn.classList.remove("active");
   });
-
-  const activeBtn = Array.from(document.querySelectorAll(".tabs button")).find(btn => 
-    btn.getAttribute("onclick").includes(`'${id}'`)
-  );
-  if (activeBtn) activeBtn.classList.add("active");
+  
+  // Add active to the correct button (exact match)
+  document.querySelectorAll(".tabs button").forEach(btn => {
+    if (btn.getAttribute("onclick") === `showTab('${id}')`) {
+      btn.classList.add("active");
+    }
+  });
 }
 
-// PRODUCT DATA - edit names or add more here
+// PRODUCT DATA
 const products = [
-  { name: "Falcon Pride", image: "https://via.placeholder.com/300x200?text=Falcon+Pride" },
-  { name: "Senior 2026", image: "https://via.placeholder.com/300x200?text=Senior+2026" },
-  { name: "Eagle Athletics", image: "https://via.placeholder.com/300x200?text=Eagle+Athletics" },
-  { name: "Patriots Forever", image: "https://via.placeholder.com/300x200?text=Patriots+Forever" },
-  { name: "Tampa Pride", image: "https://via.placeholder.com/300x200?text=Tampa+Pride" },
-  { name: "Class of 2025", image: "https://via.placeholder.com/300x200?text=Class+of+2025" },
-  { name: "Freedom Flag", image: "https://via.placeholder.com/300x200?text=Freedom+Flag" },
-  { name: "Patriot Strong", image: "https://via.placeholder.com/300x200?text=Patriot+Strong" },
-  { name: "School Spirit Hoodie", image: "https://via.placeholder.com/300x200?text=School+Spirit" },
+  { name: "Falcon Pride",           image: "https://via.placeholder.com/300x200?text=Falcon+Pride" },
+  { name: "Senior 2026",            image: "https://via.placeholder.com/300x200?text=Senior+2026" },
+  { name: "Eagle Athletics",        image: "https://via.placeholder.com/300x200?text=Eagle+Athletics" },
+  { name: "Patriots Forever",       image: "https://via.placeholder.com/300x200?text=Patriots+Forever" },
+  { name: "Tampa Pride",            image: "https://via.placeholder.com/300x200?text=Tampa+Pride" },
+  { name: "Class of 2025",          image: "https://via.placeholder.com/300x200?text=Class+of+2025" },
+  { name: "Freedom Flag",           image: "https://via.placeholder.com/300x200?text=Freedom+Flag" },
+  { name: "Patriot Strong",         image: "https://via.placeholder.com/300x200?text=Patriot+Strong" },
+  { name: "School Spirit Hoodie",   image: "https://via.placeholder.com/300x200?text=School+Spirit" },
   { name: "Red White Blue Classic", image: "https://via.placeholder.com/300x200?text=Red+White+Blue" },
-  { name: "Athletic Dept", image: "https://via.placeholder.com/300x200?text=Athletic+Dept" },
-  { name: "Customizable Patriot", image: "https://via.placeholder.com/300x200?text=Customizable" }
+  { name: "Athletic Dept",          image: "https://via.placeholder.com/300x200?text=Athletic+Dept" },
+  { name: "Customizable Patriot",   image: "https://via.placeholder.com/300x200?text=Customizable" }
 ];
 
 // RENDER PRODUCTS
 const grid = document.getElementById("product-grid");
+
 products.forEach(p => {
   const card = document.createElement("div");
   card.className = "product";
+
   card.innerHTML = `
     <img src="${p.image}" alt="${p.name}">
     <h3>${p.name}</h3>
+
     <select>
       <option>T-Shirt</option>
       <option>Hoodie</option>
       <option>Long Sleeve</option>
     </select>
+
     <button onclick="openOrderModal('${p.name}')">Order Now</button>
   `;
+
   grid.appendChild(card);
 });
 
@@ -67,4 +84,3 @@ document.addEventListener("DOMContentLoaded", () => {
   showTab("about");
 });
 
-// Updated shirt list - force rebuild July 2025
